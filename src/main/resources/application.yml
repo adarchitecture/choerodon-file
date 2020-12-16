@@ -2,7 +2,7 @@ spring:
   application:
     name: choerodon-file
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db.hzero.org:3306/hzero_file?useUnicode=true&characterEncoding=utf-8&useSSL=false}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:3306/hzero_file?useUnicode=true&characterEncoding=utf-8&useSSL=false}
     username: ${SPRING_DATASOURCE_USERNAME:hzero}
     password: ${SPRING_DATASOURCE_PASSWORD:hzero}
     hikari:
@@ -13,7 +13,7 @@ spring:
       # 等待连接池分配连接的最大时长（毫秒）
       connection-timeout: ${SPRING_DATASOURCE_CONNECTION_TIMEOUT:30000}
   redis:
-    host: ${SPRING_REDIS_HOST:redis.hzero.org}
+    host: ${SPRING_REDIS_HOST:127.0.0.1}
     port: ${SPRING_REDIS_PORT:6379}
     database: ${SPRING_REDIS_DATABASE:1}
     lettuce:
@@ -130,7 +130,7 @@ hzero:
     only-office:
       token: ${DOC_SERVER_TOKEN:epFl7vl24D}
       doc-server-url: ${DOC_SERVER_URL:http://document.hzero.org:7000/document}
-      call-back-url: ${DOC_SERVER_CALL_BACK:http://dev.hzero.org:8080/hfle/v1/only-office/save}
+      call-back-url: ${DOC_SERVER_CALL_BACK:http://127.0.0.1:8080/hfle/v1/only-office/save}
       converter-url: ${DOC_SERVER_CONVERTER_URL:http://document.hzero.org:8000/converter}
     gateway-path: ${FILE_GATEWAY_URL:http://hzeronb.saas.hand-china.com/hfle}
     rootPath: /tmp/data/fragement #分片临时文件的存储路径(绝对路径)
